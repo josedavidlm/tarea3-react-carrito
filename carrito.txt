@@ -1,0 +1,107 @@
+import { useContext, useState } from "react"
+import DataTable from "react-data-table-component";
+import { VentaContext } from "../context/AppContext";
+
+export const Carrito = () =>{
+
+    
+
+    const {productos,setProductos} = useContext(VentaContext)
+
+/*
+    const columnas =[
+        {
+            name: 'ID',
+            selector: 'id',
+            sortable:true
+        },
+        {
+            name: 'TAREA',
+            selector: 'text',
+            sortable:true
+        },
+        {
+            name: 'COMPLETADO',
+            selector: 'completed',
+            sortable:true,
+            center:true
+        },
+        {
+            name: 'ESTADO',
+            selector: 'state',
+            sortable:true
+        }
+    ];
+    */
+
+    
+    const columnas =[
+        {
+            name: 'ID',
+            selector: 'id',
+            sortable:true
+        },
+        {
+            name: 'PRODUCTO',
+            selector: 'title',
+            sortable:true
+        },
+        {
+            name: 'IMAGEN',
+            selector: 'image',
+            sortable:true,
+            center:true
+        },
+        {
+            name: 'PRECIO',
+            selector: 'price',
+            sortable:true
+        }
+    ];
+
+
+
+
+
+  const paginacionOpciones={
+    rowsPerPageText:'Filas por pagina',
+    rangeSeparatorText: 'de',
+    selectAllRowsItem:true,
+    selectAllRowsItemText:'Todos'
+}
+
+const {id,title,image}=productos;
+
+//const ExpandableComponent = ({ productos }) => {<img src={productos.image} width={30} height={30} />};
+ 
+const ExpandableComponent = ({ productos }) => {<p>ejemplo001{/*productos.title*/}</p> };
+
+    return(
+        <>
+        <hr></hr>
+        <div>CONPONENTE CARRITO.....</div>
+        <div>Lista de productos del carrito.....</div>
+
+        <div className='table-responsive'>
+        <DataTable 
+            columns={columnas}
+            data={productos}
+            expandableRows
+            /*expandableRowDisabled={row => row.disabled}*/
+            expandableRowsComponent={ExpandableComponent} 
+            expandableRowsComponentProps={{"productos": productos}}    
+            title="Lista de tareas"
+            pagination
+            paginationComponentOptions={paginacionOpciones}
+            fixedHeader
+            fixedHeaderScrollHeight='600px'
+  
+
+            />   
+        </div>    
+
+        </>
+    )
+
+
+}
