@@ -63,14 +63,14 @@ export const Carrito = () =>{
                         <th></th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody key={cart.id} >
 
                 {
 
                     cart.length > 0 ?(
                         cart.map((item) => (   
                             <>
-                            <tr>
+                            <tr key={item.id}>
                             <td>{item.title}</td>       
                             <td className='text-center'><img src={item.image} width={30} height={30} />  </td>       
                             <td className='text-center'>{item.quantity}</td>   
