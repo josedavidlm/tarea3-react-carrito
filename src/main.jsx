@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './css/index.css'
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Producto } from './components/Producto';
-import { Carrito } from './components/carrito';
+import { Carrito } from './components/Carrito';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
