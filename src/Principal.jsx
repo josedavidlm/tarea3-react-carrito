@@ -1,13 +1,11 @@
-import { Carrito } from "./components/carrito"
-import { CardProducto  } from "./components/CardProducto "
-import { Navbar } from "./components/Navbar"
+import { CardProducto } from "./components/CardProducto "
 
 export const Principal = () =>{
 
     return(
         
         <>          
-            <CardProducto ></CardProducto >            
+            <CardProducto/>
         </>
     )
 
